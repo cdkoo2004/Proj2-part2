@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 INPUT 1 OUTPUT TEMPLATE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Gilda+Display&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <style>
+        #charInput1 {
+            font-size: 40px;
+            margin-left: 34rem;
+            text-align: center;
+            border-style: none;
+            width: 100px;
+            border-radius: 4rem;;
+            height: 50px;
+            font-family: "Pixelify Sans", sans-serif;
+        }
+
+        #charInput2 {
+            font-size: 40px;
+            border-style: none;
+            border-radius: 4rem;
+            text-align: center;
+            font-family: "Pixelify Sans", sans-serif;
+            width: 100px;
+            height: 50px;
+        }
+
+        #submitButton {
+            align-items: center;
+            margin-left: 1rem;
+            background-color: linear-gradient(45deg, #ff6ec7, #ff9a8b);
+            color: rgb(255, 255, 255);
+            animation: iridescent 4s ease infinite;
+            font-family: "Pixelify Sans", sans-serif;
+            padding: 10px 40px;
+            font-size: 50px;
+            border: none;
+            border-radius: 35px;
+
+           
+            
+        }
+
+        @keyframes iridescent {
+            0% {
+                background: linear-gradient(45deg, #ff6ec7, #ff9a8b);
+            }
+            25% {
+                background: linear-gradient(45deg, #6a11cb, #2575fc);
+            }
+            50% {
+                background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            }
+            75% {
+                background: linear-gradient(45deg, #00c6ff, #0072ff);
+            }
+            100% {
+                background: linear-gradient(45deg, #ff6ec7, #ff9a8b);
+            }
+        }
+
+        #displayedImage {
+            display: none;
+        margin-left: auto;
+        margin-top: 4rem;
+        margin-right: auto;
+        width: 600px;  
+        height: 600px; 
+        object-fit: cover; 
+        text-align: center;
+        align-items: center;
+        border: white;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        body {
+            background-color: rgb(0, 0, 0) !important;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Pixelify Sans', sans-serif;
+            font-size: 9rem;
+            color: #3af2ff;
+        }
+
+
+
+        .window-bar-horizontal {
+            position: absolute;
+            top: 50%; 
+            left: 0;
+            width: 597.5px;
+            margin-top: 37rem;
+            margin-left: 26.3rem;
+            height: 15px; 
+            background-color: rgb(255, 255, 255); 
+            transform: translateY(-70%); 
+            z-index: 2;
+        }
+
+        .window-bar-vertical {
+            position: absolute;
+        top: 50%; 
+        left: 50%; 
+        width: 15px; 
+        margin-top: 36rem;
+        height: 599px; 
+        background-color: rgb(255, 255, 255); 
+        transform: translate(-50%, -50%); 
+        z-index: 2;
+        }
+
+
+        
+    </style>
+    </head>
+    <body>
+
+    <h1>What's the weather?</h1>
+
+    <input type="text" id="charInput1" maxlength="1">
+    <input type="text" id="charInput2" maxlength="1">
+
+    <button onclick="displayImage()" id="submitButton">Go</button>
+
+    <img id="displayedImage" src="" alt="Displayed Image">
+
+
+    <div id="imageContainer">
+        <img id="displayedImage" src="https://media3.giphy.com/media/Wmp1EOzVybWd13s5DB/200w.gif?cid=6c09b95263iv96vuhjmuy86bvsczsw5xoqarmel3gwl5chom&ep=v1_stickers_search&rid=200w.gif&ct=s" alt="Displayed Image">
+
+        <div class="window-bar-horizontal"></div>
+        <div class="window-bar-vertical"></div>
+    </div>
+
+
+    <script>
+        function displayImage() {  
+            const imgElement = document.getElementById("displayedImage");
+
+            const input1_letter = document.getElementById("charInput1").value.toUpperCase();
+            const input2_letter = document.getElementById("charInput2").value.toUpperCase();
+
+            const input1_number = input1_letter.charCodeAt(0); 
+            const input2_number = input2_letter.charCodeAt(0);
+
+            
+            if (input1_letter === "C" && input2_letter === "R") { 
+                imgElement.src = "https://media3.giphy.com/media/Wmp1EOzVybWd13s5DB/200w.gif?cid=6c09b95263iv96vuhjmuy86bvsczsw5xoqarmel3gwl5chom&ep=v1_stickers_search&rid=200w.gif&ct=s";
+                imgElement.style.display = "block";
+            }
+
+            if(input1_number == 67 && input2_number == 82) { 
+                imgElement.src = "https://media3.giphy.com/media/Wmp1EOzVybWd13s5DB/200w.gif?cid=6c09b95263iv96vuhjmuy86bvsczsw5xoqarmel3gwl5chom&ep=v1_stickers_search&rid=200w.gif&ct=s";
+                imgElement.style.display = "block";
+            } 
+
+            if (input1_letter === "T" && input2_letter === "S") { 
+            imgElement.src = "https://cdnb.artstation.com/p/assets/images/images/066/107/769/original/llabyrinthh-lightning-animation.gif?1692066594";
+            imgElement.style.display = "block";
+             }
+
+        if(input1_number == 67 && input2_number == 82) { 
+        imgElement.src = "https://media3.giphy.com/media/Wmp1EOzVybWd13s5DB/200w.gif?cid=6c09b95263iv96vuhjmuy86bvsczsw5xoqarmel3gwl5chom&ep=v1_stickers_search&rid=200w.gif&ct=s";
+        imgElement.style.display = "block";
+     } 
+    
+
+     if (input1_letter === "S" && input2_letter === "N") { 
+            imgElement.src = "https://www.animationsoftware7.com/img/agifs/snow01.gif";
+            imgElement.style.display = "block";
+             }
+
+        if(input1_number == 83 && input2_number == 78) { 
+        imgElement.src = "https://www.animationsoftware7.com/img/agifs/snow01.gif";
+        imgElement.style.display = "block";
+     } 
+    
+
+            let mymathresult = input1_number - input2_number;
+            console.log(mymathresult);
+
+            if(mymathresult < 1) {
+                imgElement.src = "https://media3.giphy.com/media/Wmp1EOzVybWd13s5DB/200w.gif?cid=6c09b95263iv96vuhjmuy86bvsczsw5xoqarmel3gwl5chom&ep=v1_stickers_search&rid=200w.gif&ct=s";
+                imgElement.style.display = "block";
+            }
+            
+        }
+    </script>
+
+</body>
+</html>
