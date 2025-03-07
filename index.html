@@ -7,30 +7,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Gilda+Display&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 
     <style>
-        #charInput1 {
-            font-size: 40px;
-            margin-left: 34rem;
-            text-align: center;
-            border-style: none;
-            width: 100px;
-            border-radius: 4rem;;
-            height: 50px;
-            font-family: "Pixelify Sans", sans-serif;
+        body {
+            background-color: rgb(0, 0, 0) !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
         }
 
-        #charInput2 {
+        #charInput1, #charInput2 {
+            display: flex;
             font-size: 40px;
+            text-align: center;
             border-style: none;
             border-radius: 4rem;
-            text-align: center;
-            font-family: "Pixelify Sans", sans-serif;
             width: 100px;
             height: 50px;
+            font-family: "Pixelify Sans", sans-serif;
+            margin: 10px;
         }
 
         #submitButton {
-            align-items: center;
-            margin-left: 1rem;
             background-color: linear-gradient(45deg, #ff6ec7, #ff9a8b);
             color: rgb(255, 255, 255);
             animation: iridescent 4s ease infinite;
@@ -39,9 +38,7 @@
             font-size: 50px;
             border: none;
             border-radius: 35px;
-
-           
-            
+            margin: 20px;
         }
 
         @keyframes iridescent {
@@ -62,47 +59,42 @@
             }
         }
 
+        #imageContainer {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 600px; /* Match image width */
+            height: 600px; /* Match image height */
+            margin-top: 20px;
+        }
+
         #displayedImage {
             display: none;
-        margin-left: auto;
-        margin-top: 4rem;
-        margin-right: auto;
-        width: 600px;  
-        height: 600px; 
-        object-fit: cover; 
-        text-align: center;
-        align-items: center;
-        border: white;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        h1 {
-            color: white;
+        .window-bar-horizontal {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            height: 15px;
+            background-color: rgb(255, 255, 255);
+            transform: translateY(-50%);
+            z-index: 2;
         }
 
-        h2 {
-            color: white;
-            font-family: 'Pixelify Sans', sans-serif;
-            text-align: center;
-            font-size: 2rem;
-
-        }
-
-        h3 {
-            color: white;
-            font-family: 'Pixelify Sans', sans-serif;
-            text-align: center;
-            font-size: 2rem;
-        }
-
-        h4 {
-            color: white;
-            font-family: 'Pixelify Sans', sans-serif;
-            text-align: center;
-            font-size: 2rem;
-        }
-
-        body {
-            background-color: rgb(0, 0, 0) !important;
+        .window-bar-vertical {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 15px;
+            height: 100%;
+            background-color: rgb(255, 255, 255);
+            transform: translateX(-50%);
+            z-index: 2;
         }
 
         h1 {
@@ -112,55 +104,30 @@
             color: #3af2ff;
         }
 
-       
-        
-        .window-bar-horizontal {
-            position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 15px;
-    background-color: rgb(255, 255, 255);
-    transform: translateY(-50%);
-    z-index: 2;
+        h2, h3, h4 {
+            color: white;
+            font-family: 'Pixelify Sans', sans-serif;
+            text-align: center;
+            font-size: 2rem;
         }
-
-        .window-bar-vertical {
-            position: absolute;
-    top: 0;
-    left: 50%;
-    width: 15px;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
-    transform: translateX(-50%);
-    z-index: 2;
-        }
-
-
-        
     </style>
-    </head>
-    <body>
+</head>
+<body>
 
     <h1>What's the weather?</h1>
     <h2>Enter C + R = 🌧️</h2>
     <h3>Enter T + S = ⚡</h3>
-    <h4>Enter S + N = ❄️</h3>
+    <h4>Enter S + N = ❄️</h4>
 
     <input type="text" id="charInput1" maxlength="1">
     <input type="text" id="charInput2" maxlength="1">
-
     <button onclick="displayImage()" id="submitButton">Go</button>
 
-    <img id="displayedImage" src="" alt="Displayed Image">
-
-
     <div id="imageContainer">
-        <img id="displayedImage" src="https://media3.giphy.com/media/Wmp1EOzVybWd13s5DB/200w.gif?cid=6c09b95263iv96vuhjmuy86bvsczsw5xoqarmel3gwl5chom&ep=v1_stickers_search&rid=200w.gif&ct=s" alt="Displayed Image">
+        <img id="displayedImage" src="" alt="Displayed Image">
         <div class="window-bar-horizontal"></div>
         <div class="window-bar-vertical"></div>
     </div>
-
 
     <script>
         function displayImage() {  
@@ -172,7 +139,6 @@
             const input1_number = input1_letter.charCodeAt(0); 
             const input2_number = input2_letter.charCodeAt(0);
 
-            
             if (input1_letter === "C" && input2_letter === "R") { 
                 imgElement.src = "https://media3.giphy.com/media/Wmp1EOzVybWd13s5DB/200w.gif?cid=6c09b95263iv96vuhjmuy86bvsczsw5xoqarmel3gwl5chom&ep=v1_stickers_search&rid=200w.gif&ct=s";
                 imgElement.style.display = "block";
@@ -184,26 +150,14 @@
             } 
 
             if (input1_letter === "T" && input2_letter === "S") { 
-            imgElement.src = "https://cdnb.artstation.com/p/assets/images/images/066/107/769/original/llabyrinthh-lightning-animation.gif?1692066594";
-            imgElement.style.display = "block";
-             }
+                imgElement.src = "https://cdnb.artstation.com/p/assets/images/images/066/107/769/original/llabyrinthh-lightning-animation.gif?1692066594";
+                imgElement.style.display = "block";
+            }
 
-        if(input1_number == 67 && input2_number == 82) { 
-        imgElement.src = "https://media3.giphy.com/media/Wmp1EOzVybWd13s5DB/200w.gif?cid=6c09b95263iv96vuhjmuy86bvsczsw5xoqarmel3gwl5chom&ep=v1_stickers_search&rid=200w.gif&ct=s";
-        imgElement.style.display = "block";
-     } 
-    
-
-     if (input1_letter === "S" && input2_letter === "N") { 
-            imgElement.src = "https://www.animationsoftware7.com/img/agifs/snow01.gif";
-            imgElement.style.display = "block";
-             }
-
-        if(input1_number == 83 && input2_number == 78) { 
-        imgElement.src = "https://www.animationsoftware7.com/img/agifs/snow01.gif";
-        imgElement.style.display = "block";
-     } 
-    
+            if (input1_letter === "S" && input2_letter === "N") { 
+                imgElement.src = "https://www.animationsoftware7.com/img/agifs/snow01.gif";
+                imgElement.style.display = "block";
+            }
 
             let mymathresult = input1_number - input2_number;
             console.log(mymathresult);
@@ -212,7 +166,6 @@
                 imgElement.src = "https://media3.giphy.com/media/Wmp1EOzVybWd13s5DB/200w.gif?cid=6c09b95263iv96vuhjmuy86bvsczsw5xoqarmel3gwl5chom&ep=v1_stickers_search&rid=200w.gif&ct=s";
                 imgElement.style.display = "block";
             }
-            
         }
     </script>
 
