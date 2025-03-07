@@ -116,27 +116,24 @@
         
         .window-bar-horizontal {
             position: absolute;
-            top: 68%; 
-            left: 0;
-            width: 600px;
-            margin-top: 40rem;
-            margin-left: 26.3rem;
-            height: 15px; 
-            background-color: rgb(255, 255, 255); 
-            transform: translateY(90%); 
-            z-index: 2;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: rgb(255, 255, 255);
+    transform: translateY(-50%);
+    z-index: 2;
         }
 
         .window-bar-vertical {
             position: absolute;
-        top: 80%; 
-        left: 50%; 
-        width: 15px; 
-        margin-top: 36rem;
-        height: 599px; 
-        background-color: rgb(255, 255, 255); 
-        transform: translate(-50%, -50%); 
-        z-index: 2;
+    top: 0;
+    left: 50%;
+    width: 15px;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    transform: translateX(-50%);
+    z-index: 2;
         }
 
 
@@ -160,7 +157,6 @@
 
     <div id="imageContainer">
         <img id="displayedImage" src="https://media3.giphy.com/media/Wmp1EOzVybWd13s5DB/200w.gif?cid=6c09b95263iv96vuhjmuy86bvsczsw5xoqarmel3gwl5chom&ep=v1_stickers_search&rid=200w.gif&ct=s" alt="Displayed Image">
-
         <div class="window-bar-horizontal"></div>
         <div class="window-bar-vertical"></div>
     </div>
